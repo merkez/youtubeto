@@ -1,0 +1,70 @@
+name: Download & Release Youtube Playlists
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.13
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+
+      - name: Install PIGZ
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install pigz -y
+
+      - name: Get youtube-dl
+        run: |
+          sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+          sudo chmod a+rx /usr/local/bin/youtube-dl
+
+      - name: Go Build
+        run: go build -o main -v .
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          body_path: ./resource/playlist-list.csv
+          release_name: New Youtube Playlist ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+
+      - name: Go Run
+        run: |
+          ./main
+
+      - name: Upload Release Assets
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./*.tar.gz
+
+      - name: Commit Removed Lines From List Of Playlist
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: AutoBot
+          author_email: hi@mrturkmen.com
+          message: "[automated msg]: playlist doc updated with new release"
+          branch: master
+          add: "resource/*.csv"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
