@@ -18,7 +18,7 @@ const (
 func main() {
 	cli := client.New()
 
-	var oldFile, err = os.Create(OLD_LIST_OF_PLAYLIST_URLS)
+	var oldFile, err = os.OpenFile(OLD_LIST_OF_PLAYLIST_URLS, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 	if err != nil {
 		log.Fatal(err)
 	}
