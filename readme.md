@@ -1,4 +1,4 @@
-#youtubeto
+# youtubeto
 
 youtubeto is automated way of saving Youtube Playlists to releases. In this simple hobby project
 there are two main files which are  `playlist-list.csv` and `old-playlist-list.csv`. 
@@ -29,8 +29,8 @@ only duty is releasing list of Youtube playlists as Github release assets.
 There are some limitations regarding to file sizes in releases, according to Github Statement here: 
 https://docs.github.com/en/free-pro-team@latest/github/managing-large-files/distributing-large-binaries
 
-Basically, a file size which will be uploaded to releases should NOT exceeds 2 GB. However, keep in mind that 
-it is per file, there is no limitation for overall size of release :). 
+Basically, a file size which will be uploaded to releases **should NOT exceeds 2 GB**. However, keep in mind that 
+it is per file, **there is NO limitation for overall size of release** :). 
 It means that repository will be updated to split files into chunks if size of the file exceeds 2 GB. 
 So, in case of 15 GB of playlist, it will be uploaded in 2GB chunks to releases. 
 
@@ -46,8 +46,7 @@ It is good to keep in mind the given limitations above.
 
 **Job execution time**  and **Workflow run time** can be easily fixed if you have your own server. 
 
-If you would like to run Github Actions in your server, there is no limitation regarding to **Job execution time**  and **Workflow run time** .
-
+If you would like to run Github Actions in your server, there is no limitation regarding to **Job execution time**  and **Workflow run time**.
 
 Check out how to setup Github Actions for your server from here:
  
