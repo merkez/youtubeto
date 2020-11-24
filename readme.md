@@ -5,6 +5,10 @@ there are two main files which are  `playlist-list.csv` and `old-playlist-list.c
 
 `playlist-list.csv` contains, name of the release (- which you would like to have -) and link to Youtube playlist to save as Github release.
 
+## Demo
+
+[![youtubeto-demo](https://img.youtube.com/vi/53ax_T7Q2p4/0.jpg)](https://www.youtube.com/watch?v=53ax_T7Q2p4)
+
 ## How it works ? 
 
 **Example** `playlist-list.csv`
