@@ -5,7 +5,9 @@ there are two main files which are  `playlist-list.csv` and `old-playlist-list.c
 
 `playlist-list.csv` contains, name of the release (- which you would like to have -) and link to Youtube playlist to save as Github release.
 
-## Example `playlist-list.csv`
+## How it works ? 
+
+**Example** `playlist-list.csv`
 
 ```csv
 cloud_fundamentals_ibm,https://www.youtube.com/playlist?list=PLOspHqNVtKAC-_ZAGresP-i0okHe5FjcJ
@@ -15,7 +17,7 @@ red_hat_openshit_ibm,https://www.youtube.com/playlist?list=PLOspHqNVtKACZI_rUorm
 
 Once a commit tagged with semantic versioning, the workflow defined under `.github/workflows/releaseplaylists.yml` will start to run and release defined files in the file.
 
-When workflow successfully finished, all content of `playlist-list.csv` will be migrated automatically to `old-playlist-list.csv` file.
+When workflow successfully finished, all content of `playlist-list.csv` will be appended automatically to `old-playlist-list.csv` file and `playlist-list.csv`will be wiped. 
 
 ## How it can be useful ? 
 
