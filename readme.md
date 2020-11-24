@@ -46,7 +46,7 @@ There are some more limitations:
 
 **Workflow run time** - Each workflow run is limited to 72 hours. If a workflow run reaches this limit, the workflow run is cancelled.
 
-More details about limmitations on Github Actions: https://docs.github.com/en/free-pro-team@latest/actions/reference/usage-limits-billing-and-administration
+More details about limitations on Github Actions: https://docs.github.com/en/free-pro-team@latest/actions/reference/usage-limits-billing-and-administration
 
 It is good to keep in mind the given limitations above. 
 
