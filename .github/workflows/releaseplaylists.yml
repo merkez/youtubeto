@@ -26,6 +26,10 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install pigz -y
 
+      - name: Install FFMEG
+        run: |
+          sudo apt-get install ffmpeg -y
+
       - name: Get youtube-dl
         run: |
           sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
