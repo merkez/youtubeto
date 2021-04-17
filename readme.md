@@ -1,6 +1,6 @@
 # youtubeto
 
-**Blog Post**: [https://mrturkmen.com/download-release-youtube-playlists/]
+**Blog Post**: [https://mrturkmen.com/posts/download-release-youtube-playlists/]
 
 youtubeto is automated way of saving Youtube Playlists to releases. In this simple hobby project
 there are two main files which are  `playlist-list.csv` and `old-playlist-list.csv`. 
