@@ -12,7 +12,7 @@ func (ytdl *YoutubeDL) exec(args ...string) ([]byte, error) {
 // DownloadWithOutputName generates Folder named with Playlist name
 // downloads videos under given playlist url to Folder
 func (ytdl *YoutubeDL) DownloadWithOutputName(folderName, url string) error {
-	cmds := []string{"-o", folderName + "/%(playlist_index)s - %(title)s.%(ext)s", url}
+	cmds := []string{"--rm-cache-dir", "-o", folderName + "/%(playlist_index)s - %(title)s.%(ext)s", url}
 	_, err := ytdl.exec(cmds...)
 	return err
 }
