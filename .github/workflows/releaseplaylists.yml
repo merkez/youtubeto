@@ -34,7 +34,8 @@ jobs:
         run: |
           sudo wget https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl -O /usr/local/bin/youtube-dl
           sudo chmod a+rx /usr/local/bin/youtube-dl
-
+          sudo youtube-dl -U
+        
       - name: Go Build
         run: go build -o main -v .
 
