@@ -32,10 +32,9 @@ jobs:
 
       - name: Get youtube-dl
         run: |
-          sudo wget https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl -O /usr/local/bin/youtube-dl
-          sudo chmod a+rx /usr/local/bin/youtube-dl
-          sudo youtube-dl -U
-        
+          sudo apt install pip -y
+          sudo pip install --upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"
+      
       - name: Go Build
         run: go build -o main -v .
 
