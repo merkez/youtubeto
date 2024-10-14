@@ -28,6 +28,11 @@ jobs:
         run: |
           sudo apt-get install ffmpeg -y
 
+      - name: Install FFMEG
+        run: |
+          sudo apt-get install python3
+
+
       - name: Get youtube-dl
         run: |
           sudo pip3 install --upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"
